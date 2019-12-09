@@ -10,28 +10,28 @@ import UIKit
 
 enum MainScene
 {
-    // MARK: Use cases
-    enum Item
-    {
-        struct Request
-        {
-            let prefix: String?
-        }
-        struct Response
-        {
-            struct DataItem {
-                let title: String
-                let detail: String
-            }
-            let items: [DataItem]
-        }
-        struct ViewModel
-        {
-            struct ViewModelItem {
-                let title: String
-                let detail: String
-            }
-            let items: [ViewModelItem]
-        }
-    }
+	// MARK: Use cases
+	enum Item
+	{
+		struct Request
+		{
+			let prefix: String?
+		}
+		struct Response
+		{
+			struct DataItem {
+				let title: String
+				let detail: String
+			}
+			let items: [DataItem]
+		}
+		struct ViewModel
+		{
+			struct ViewModelItem {
+				let title: String
+				let detail: String
+			}
+			let items: [ViewModelItem]
+		}
+	}
 }

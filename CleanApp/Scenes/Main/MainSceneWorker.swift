@@ -34,12 +34,17 @@ fileprivate let items: [APIItem] = [
 ]
 
 protocol MainSceneWorkerProtocol {
-    func getItems(withPrefix prefix: String, completion: @escaping (_ items: [APIItemProtocol]) -> Void)
+    func getItems(withPrefix prefix: String?, completion: @escaping (_ items: [APIItemProtocol]) -> Void)
 }
 
 class MainSceneWorker: MainSceneWorkerProtocol {
-    func getItems(withPrefix prefix: String, completion: @escaping ([APIItemProtocol]) -> Void) {
-        let result = items.filter{ $0.title.hasPrefix(prefix)}
-        completion(result)
+    func getItems(withPrefix prefix: String?, completion: @escaping ([APIItemProtocol]) -> Void) {
+		if let prefix = prefix {
+			let result = items.filter{ $0.title.hasPrefix(prefix)}
+			completion(result)
+		}
+		else {
+			completion(items)
+		}
     }
 }
