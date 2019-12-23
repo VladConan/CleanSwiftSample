@@ -40,13 +40,13 @@ class ___VARIABLE_sceneName___InteractorTests: XCTestCase
     // MARK: Tests
     func testDoSomething()
     {
-        // Given
+        // Arrange
         let mock = ___VARIABLE_sceneName___PresentationLogicMock()
         sut.presenter = mock
         let request = ___VARIABLE_sceneName___.Something.Request()
-        // When
+        // Act
         sut.doSomething(request: request)
-        // Then
+        // Assert
         XCTAssertTrue(mock.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
     }
 }

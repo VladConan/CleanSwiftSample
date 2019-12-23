@@ -48,22 +48,22 @@ class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase
     // MARK: Tests
     func testShouldDoSomethingWhenViewIsLoaded()
     {
-        // Given
+        // Arrange
         let mock = ___VARIABLE_sceneName___BusinessLogicMock()
         sut.interactor = mock
-        // When
+        // Act
         loadView()
-        // Then
+        // Assert
         XCTAssertTrue(mock.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
     }
     func testDisplaySomething()
     {
-        // Given
+        // Arrange
         let viewModel = ___VARIABLE_sceneName___.Something.ViewModel()
-        // When
+        // Act
         loadView()
         sut.displaySomething(viewModel: viewModel)
-        // Then
+        // Assert
         //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
     }
 }

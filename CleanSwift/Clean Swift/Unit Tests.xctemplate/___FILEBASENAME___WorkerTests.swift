@@ -32,8 +32,8 @@ class ___VARIABLE_sceneName___WorkerTests: XCTestCase
     // MARK: Tests
     func testSomething()
     {
-        // Given
-        // When
-        // Then
+        // Arrange
+        // Act
+        // Assert
     }
 }

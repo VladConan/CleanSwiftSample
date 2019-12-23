@@ -2,7 +2,7 @@
 //  MainSceneInteractor.swift
 //  CleanApp
 //
-//  Created by admin on 19/04/2019.
+//  Created by Vladimir Konon on 19/04/2019.
 //  Copyright (c) 2019 clean. All rights reserved.
 //
 
@@ -23,9 +23,6 @@ class MainSceneInteractor: MainSceneBusinessLogic, MainSceneDataStore
 	var requestItems: MainScene.Item.Response.DataItem?
 	var presenter: MainScenePresentationLogic?
 	var worker: MainSceneWorkerProtocol = MainSceneWorker()
-	func fetch(request: MainScene.Item.Request) {
-
-	}
 
 	func fetchItems(request: MainScene.Item.Request) {
 		weak  var wself = self

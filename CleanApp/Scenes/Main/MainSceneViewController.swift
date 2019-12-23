@@ -2,14 +2,14 @@
 //  MainSceneViewController.swift
 //  CleanApp
 //
-//  Created by admin on 19/04/2019.
+//  Created by Vladimir Konon on 19/04/2019.
 //  Copyright (c) 2019 clean. All rights reserved.
 //
 
 import UIKit
 import SnapKit
 
-protocol MainSceneDisplayLogic: class
+protocol MainSceneDisplayLogic: AnyObject
 {
 	func displayItems(viewModel: MainScene.Item.ViewModel)
 }

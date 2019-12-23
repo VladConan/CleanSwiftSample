@@ -40,13 +40,13 @@ class ___VARIABLE_sceneName___PresenterTests: XCTestCase
     // MARK: Tests
     func testPresentSomething()
     {
-        // Given
+        // Arrange
         let mock = ___VARIABLE_sceneName___DisplayLogicMock()
         sut.viewController = mock
         let response = ___VARIABLE_sceneName___.Something.Response()
-        // When
+        // Act
         sut.presentSomething(response: response)
-        // Then
+        // Assert
         XCTAssertTrue(mock.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
     }
 }

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CleanApp
 //
-//  Created by admin on 19/04/2019.
+//  Created by Vladimir Konon on 19/04/2019.
 //  Copyright © 2019 clean. All rights reserved.
 //
 
