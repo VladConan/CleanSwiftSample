@@ -6,13 +6,13 @@
 //  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol ___VARIABLE_sceneName___WorkerProtocol {
-    func doSomeWork()
+	func doSomeWork()
 }
 
 class ___VARIABLE_sceneName___Worker: ___VARIABLE_sceneName___WorkerProtocol {
-    func doSomeWork(){
-    }
+	func doSomeWork(){
+	}
 }

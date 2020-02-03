@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 protocol MainSceneDisplayLogic: AnyObject
 {
@@ -22,6 +21,7 @@ class MainSceneViewController: UIViewController
 	// display data
 	var displayData: [MainScene.Item.ViewModel.ViewModelItem] = [MainScene.Item.ViewModel.ViewModelItem]()
 	let tableView = UITableView()
+
 	// MARK: Object lifecycle
 	init() {
 		super.init(nibName: nil, bundle: nil)
@@ -56,12 +56,16 @@ class MainSceneViewController: UIViewController
 	{
 		super.viewDidLoad()
 		// init ui
+		tableView.translatesAutoresizingMaskIntoConstraints = false;
 		self.view.addSubview(tableView)
 		tableView.dataSource = self
 		tableView.delegate = self
-		tableView.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview()
-		}
+
+		NSLayoutConstraint.activate([
+			tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+			tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+			tableView.topAnchor.constraint(equalTo: view.topAnchor),
+			tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
 		getItems()
 	}
 	// MARK: Do something
@@ -71,9 +75,14 @@ class MainSceneViewController: UIViewController
 		interactor?.fetchItems(request: request)
 	}
 }
-extension MainSceneViewController: UITableViewDelegate{
 
+extension MainSceneViewController: UITableViewDelegate{
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		// TODO: view details
+	}
 }
+
 extension MainSceneViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return displayData.count
@@ -81,14 +90,14 @@ extension MainSceneViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "some")
+		cell.accessoryType = .disclosureIndicator
 		let item = displayData[indexPath.row]
 		cell.textLabel?.text = item.title
 		cell.detailTextLabel?.text = item.detail
 		return cell
 	}
-
-
 }
+
 extension MainSceneViewController: MainSceneDisplayLogic {
 	func displayItems(viewModel: MainScene.Item.ViewModel) {
 		displayData = viewModel.items

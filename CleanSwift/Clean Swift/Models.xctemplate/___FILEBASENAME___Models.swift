@@ -6,21 +6,16 @@
 //  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-enum ___VARIABLE_sceneName___
-{
-    // MARK: Use cases
-    enum Something
-    {
-        struct Request
-        {
-        }
-        struct Response
-        {
-        }
-        struct ViewModel
-        {
-        }
-    }
+enum ___VARIABLE_sceneName___ {
+	// MARK: Use cases
+	enum Something {
+		struct Request {
+		}
+		struct Response {
+		}
+		struct ViewModel {
+		}
+	}
 }
